@@ -1,0 +1,19 @@
+.navbar-brand{
+	padding: 0;
+}
+
+#navbar-collapse ul{
+	margin-top: 0;
+}
+
+#myCarousel{
+	margin-top: 50px;
+}
+
+.carousel-inner img{
+	margin: 0 auto;
+}
+
+.carousel-control{
+	font-size: 100px;
+}

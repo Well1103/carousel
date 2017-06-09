@@ -4,15 +4,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>轮播器插件</title>
+    <title></title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
     <style type="text/css">
     </style>
   </head>
   <body>
     
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#"><img src="img/bilibili.png" alt="bilibili" width="105px"> </a>
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-list"></span> 资讯</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-fire"></span> 案例</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span> 关于</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>   
 
-     <!-- data-ride="carousel" 加到myCarousel里可以自动播放-->
     <div id="myCarousel" class="carousel slide">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -20,25 +40,44 @@
         <li data-target="#myCarousel" data-slide-to="2"></li>
       </ol>
       <div class="carousel-inner">
-        <div class="item active"><img src="img/apink1.jpg" alt="apink1" width="1366px" height="768px"></div>
-        <div class="item"><img src="img/apink2.jpg" alt="apink2" width="1366px" height="768px"></div>
-        <div class="item"><img src="img/apink3.jpg" alt="apink3" width="1366px" height="768px"></div>
+        <div class="item active" style="background-color: #7d7676">
+            <img src="img/apink11.jpg" alt="apink1">
+            <div class="carousel-caption">
+              <h3>《不知道》</h3>
+              <p>Apink2011年的出道曲</p>
+            </div>
+        </div>
+        <div class="item"><img src="img/apink21.jpg" alt="apink2"></div>
+        <div class="item" style="background-color: #c9c4c1"><img src="img/apink31.jpg" alt="apink3"></div>
       </div>
       <a href="#myCarousel" data-slide="prev" class="carousel-control left">&lsaquo;</a>
       <a href="#myCarousel" data-slide="next" class="carousel-control right">&rsaquo;</a>
     </div>
 
+    
+
   
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
+        
         $("#myCarousel").carousel({
           //设置自动播放时间
-          interval:2000,
+          interval:3000,
           //设置暂停按钮的事件
           pause:"hover",
           //只播放一次
           //wrap:false,
+        });
+
+
+        $(function(){
+          //初始化居中
+          $('.carousel-control').css("line-height" , $(".carousel-inner").height()+"px" );
+          //当窗口大小改变时重新居中
+          $(window).resize(function(){
+            $('.carousel-control').css("line-height" , $(".carousel-inner").height()+"px" );
+          });
         });
 
     </script>
